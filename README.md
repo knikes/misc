@@ -19,5 +19,6 @@ tar xvf file-1.0.tar - 		to uncompressed tar file (.tar)
 
 
 Call adapter from URL
+
 curl -v -XGET -g http://localhost:8080/invoke?adapter=Test\&procedure=getStories\&parameters=[]
 
