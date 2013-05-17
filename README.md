@@ -22,3 +22,37 @@ Call adapter from URL
 
 curl -v -XGET -g http://localhost:8080/invoke?adapter=Test\&procedure=getStories\&parameters=[]
 
+
+Adatper example:
+/**********************************************************************************
+*   		 				Sync
+**********************************************************************************/
+function sync(){
+	
+	var invocationData = {
+			adapter : 'MQTT_Adapter',
+			procedure : 'sync',
+			parameters : []
+	};
+	
+	WL.Client.invokeProcedure(invocationData, {
+		onSuccess : syncSuccess,
+		onFailure : syncFailure
+	});
+}
+
+function syncSuccess(response){
+	console.log("sync Success");
+	console.log(response);
+	var returnedItems = response.invocationResult.items;
+	
+	for(var i=0; i<returnedItems.length; i++){
+		addItemToList('#item_list', returnedItems[i]);
+	}
+}
+
+function syncFailure(response){
+	console.log("sync Failure");
+	console.log(response);
+}
+
