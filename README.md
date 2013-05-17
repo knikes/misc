@@ -24,6 +24,7 @@ curl -v -XGET -g http://localhost:8080/invoke?adapter=Test\&procedure=getStories
 
 
 Adatper example:
+```
 /**********************************************************************************
 *   		 				Sync
 **********************************************************************************/
@@ -55,4 +56,4 @@ function syncFailure(response){
 	console.log("sync Failure");
 	console.log(response);
 }
-
+```
