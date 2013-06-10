@@ -23,6 +23,10 @@ Call adapter from URL
 curl -v -XGET -g http://localhost:8080/invoke?adapter=Test\&procedure=getStories\&parameters=[]
 
 
+Download Files from web directory
+
+wget -r --no-parent --reject "index.html*" http://url.com
+
 Adatper example:
 ```
 /**********************************************************************************
