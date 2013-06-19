@@ -27,6 +27,10 @@ Download Files from web directory
 
 wget -r --no-parent --reject "index.html*" http://url.com
 
+View all ports being listened to on OSX
+
+lsof -i -P | grep -i "listen"
+
 Adatper example:
 ```
 /**********************************************************************************
