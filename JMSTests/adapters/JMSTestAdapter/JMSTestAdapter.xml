@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    5725-G92 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+    US Government Users Restricted Rights - Use, duplication or
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<wl:adapter name="JMSTestAdapter"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:wl="http://www.worklight.com/integration"
+	xmlns:jms="http://www.worklight.com/integration/jms">
+
+	<displayName>JMSTestAdapter</displayName>
+	<description>JMSTestAdapter</description>
+	<connectivity>
+        <connectionPolicy xsi:type="jms:JMSConnectionPolicyType">
+
+        	<!-- Active MQ 
+        	<namingConnection url="tcp://localhost:61616" initialContextFactory="org.apache.activemq.jndi.ActiveMQInitialContextFactory"/>                          
+        	<jmsConnection connectionFactory="ConnectionFactory"/> -->
+        
+        	<!-- Websphere MQ 
+        	<namingConnection url="file:/Users/Nortey/Desktop/JMS/" initialContextFactory="com.sun.jndi.fscontext.RefFSContextFactory"/>                          
+        	<jmsConnection connectionFactory="CF4"/> -->
+        	
+        	<!-- Liberty to WAS SIBUS                             
+        	<jmsConnection connectionFactory="myQCF"/> -->
+        	
+        	<!-- Liberty 8.5.5 ND Built in                          
+        	<jmsConnection connectionFactory="jms/libertyQCF"/> -->
+        	
+        	<!-- WAS SIBUS running on WAS -->                       
+        	<jmsConnection connectionFactory="jms/QCF.Test"/> 
+        
+        </connectionPolicy>
+        <loadConstraints maxConcurrentConnectionsPerNode="10"/>
+    </connectivity>
+
+	<procedure name="beginTests"/>
+	
+	<procedure name="writeMessage"/>
+	<procedure name="readMessage"/>
+	<procedure name="requestReply"/>
+	
+</wl:adapter>
