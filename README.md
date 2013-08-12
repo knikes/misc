@@ -31,6 +31,9 @@ View all ports being listened to on OSX
 
 lsof -i -P | grep -i "listen"
 
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security
+
+
 Adatper example:
 ```
 /**********************************************************************************
