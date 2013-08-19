@@ -34,6 +34,8 @@ lsof -i -P | grep -i "listen"
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security
 
 
+for i in *.jar;do echo "" && echo $i && jar -tf $i|grep EventFactoryContext;done |less 
+
 Adatper example:
 ```
 /**********************************************************************************
