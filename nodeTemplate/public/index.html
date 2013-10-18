@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Node Certificate Authority</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="public/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
+    <link href="public/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Certificate Authority</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li id="requestCertNav" class="active"><a href="#">Request Certificate</a></li>
+              <li id="viewUsersNav"><a href="#">View Users</a></li>
+              <li id="unitTestsNav" ><a href="#about">Unit Tests</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div id="requestCertificate" class="contentDiv row">
+        <h1 style="text-align: center">Request Certificate<h1> <hr/>
+
+       <!-- <div id="requestCertificateForm" class="span4">
+          <h3>Request With Subject</h3>
+          <input type="text" placeholder="Country Code" id="country_code"> <br/>
+          <input type="text" placeholder="State or Province" id="state_or_province"> <br/>
+          <input type="text" placeholder="Locality" id="locality"> <br/>
+          <input type="text" placeholder="Organization" id="organization"> <br/>
+          <input type="text" placeholder="Common Name" id="common_name"> <br/>
+          <button id="submitCertRequest">Submit Request</button>
+        </div> -->
+
+        <div id="requestCertificateCSR" class="span6">
+          <h3>Request With CSR</h3> <br/>
+          <input type="text" placeholder="Common Name" id="common_name">
+          <textarea rows="20" style="width:100%" id="csr"></textarea>
+          <button id="submitCertRequestCSR">Submit Request</button>
+        </div>
+
+        <div id="displayCertificate" class="span6">
+          <h3>Generated Certificate</h3> <br/>
+          <textarea rows="20" style="width:100%" id="generatedCertificate"></textarea>
+        </div>
+      </div>
+
+      <div id="viewUsers" class="contentDiv">
+          <table id="usersTable" class="table table-striped">
+            <thead> 
+              <tr>
+                <td>Subject Name</td> 
+                <td>Serial Number</td>
+                <td>View Certificate</td>
+              </tr> 
+            <thead/>
+          </table>
+      </div>
+
+      <div id="unitTests" class="contentDiv">
+        <h2>Unit Tests</h2>
+        WARNING: Running the unit tests will clear the CA certificate as well as the mongodb <br/>
+        <button onclick="startTests()">Run Unit Tests</button>
+      </div>
+
+    </div> <!-- /container -->
+
+    <script src="public/js/jquery-1.10.2.min.js"></script>
+    <script src="public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/js/utils.js"></script>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/unitTests.js"></script>
+  </body>
+</html>
