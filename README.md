@@ -70,3 +70,32 @@ function syncFailure(response){
 	console.log(response);
 }
 ```
+
+Get size of DB
+```
+SELECT table_schema "Data Base Name", SUM( data_length + index_length) / 1024 / 1024 
+"Data Base Size in MB" FROM information_schema.TABLES GROUP BY table_schema ;
+```
+
+
+Get size of DB
+```
+SELECT
+  table_schema, count(*) TABLES,
+  concat(round(sum(table_rows)/1000000,2),'M')
+  rows,concat(round(sum(data_length)/(1024*1024*1024),2),'G')
+  DATA,concat(round(sum(index_length)/(1024*1024*1024),2),'G')
+  idx,concat(round(sum(data_length+index_length)/(1024*1024*1024),2),'G')
+  total_size,round(sum(index_length)/sum(data_length),2) idxfrac
+FROM
+  information_schema.TABLES group by table_schema;
+ ```
+  
+Get row size in bytes
+```
+select
+  device_id,
+  sum(length(device_id) + length(friendly_name) + length(user_id) + length(device_os) + length(device_model)+ length(last_accessed_time)+ length(status)) as bytes
+from DEVICES
+where device_id = "00009304-A35B-3F8C-BB96-7FFCA1840C0C";
+```
