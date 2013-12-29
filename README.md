@@ -99,3 +99,16 @@ select
 from DEVICES
 where device_id = "00009304-A35B-3F8C-BB96-7FFCA1840C0C";
 ```
+
+
+Amazon EC2
+
+sudo yum install gcc-c++ make 
+
+sudo yum install openssl-devel 
+
+sudo yum install git 
+
+git clone git://github.com/joyent/node.git 
+
+cd node
