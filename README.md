@@ -120,3 +120,6 @@ git checkout v0.8.1
 make 
 
 sudo make install
+
+
+xcrun -sdk iphoneos lipo -info
