@@ -123,3 +123,14 @@ sudo make install
 
 
 xcrun -sdk iphoneos lipo -info
+
+
+Javascript closure
+
+```
+downloadLogsBtn.on("click", function(deviceId){
+                return function(){
+                    Utility.downloadData(page, "downloadLogs/"+ deviceId);
+                };
+            }(data.deviceId));
+```
